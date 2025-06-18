@@ -1,0 +1,239 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EtiquetaItem_Get" xml:space="preserve">
+    <value>SELECT
+	ITEM."Code",
+	ETIQ."Code" 		"Código",
+	ETIQ."Name" 		"Descrição",
+	IFNULL(ITEM."U_Padrao", 'N') "Etiqueta Padrão",
+	IFNULL(ITEM."U_Valida", 'N') "Modelo Válido"
+FROM "@CVA_ETIQUETA" ETIQ
+	LEFT JOIN "@SO_ETIQ_ITEM" ITEM ON ETIQ."Code" = ITEM."U_CodEtiq" AND ITEM."U_ItemCode" = '{0}'
+ORDER BY ETIQ."Code"</value>
+  </data>
+  <data name="EtiquetaItem_Insert" xml:space="preserve">
+    <value>INSERT INTO "@SO_ETIQ_ITEM"
+(
+	"Code",
+	"U_CodEtiq",
+	"U_ItemCode",
+	"U_Padrao",
+	"U_Valida"
+)
+SELECT IFNULL(MAX("Code") + 1, 1), '{0}', '{1}', '{2}', '{3}'
+FROM "@SO_ETIQ_ITEM"</value>
+  </data>
+  <data name="EtiquetaItem_Update" xml:space="preserve">
+    <value>UPDATE "@SO_ETIQ_ITEM"
+SET "U_Padrao" = '{1}', "U_Valida" = '{2}'
+WHERE "Code" = {0}</value>
+  </data>
+  <data name="EtiquetaPadrao_GetByItem" xml:space="preserve">
+    <value>SELECT DISTINCT
+	ETIQ."Code",
+	ETIQ."Name"
+FROM "@SO_ETIQ_ITEM" ETIQ_ITEM
+	INNER JOIN "@CVA_ETIQUETA" ETIQ ON ETIQ."Code" = ETIQ_ITEM."U_CodEtiq"
+WHERE ETIQ_ITEM."U_ItemCode" = '{0}' AND ETIQ_ITEM."U_Padrao" = 'Y'
+ORDER BY ETIQ."Code"</value>
+  </data>
+  <data name="EtiquetaPN_Get" xml:space="preserve">
+    <value>SELECT
+	PN."Code",
+	ETIQ."Code" 		"Código",
+	ETIQ."Name" 		"Descrição",
+	IFNULL(PN."U_Padrao", 'N') "Etiqueta Padrão"
+FROM "@CVA_ETIQUETA" ETIQ
+	LEFT JOIN "@SO_ETIQ_PN" PN ON ETIQ."Code" = PN."U_CodEtiq" AND PN."U_CardCode" = '{0}'
+ORDER BY ETIQ."Code"</value>
+  </data>
+  <data name="EtiquetaPN_Insert" xml:space="preserve">
+    <value>INSERT INTO "@SO_ETIQ_PN"
+(
+	"Code",
+	"U_CodEtiq",
+	"U_CardCode",
+	"U_Padrao"
+)
+SELECT IFNULL(MAX("Code") + 1, 1), '{0}', '{1}', '{2}'
+FROM "@SO_ETIQ_PN"</value>
+  </data>
+  <data name="EtiquetaPN_Update" xml:space="preserve">
+    <value>UPDATE "@SO_ETIQ_ITEM"
+SET "U_Padrao" = '{1}'
+WHERE "Code" = {0}</value>
+  </data>
+  <data name="EtiquetaServicesGetTagHana" xml:space="preserve">
+    <value>select "Code", "Name", "U_descricao","U_script","U_linguagem" , "U_procedure", "U_local", "U_procpesq","U_caminhoscript"
+  from "@CVA_ETIQUETA"
+ where "Canceled" = 'N'
+   and "Code" = {0}
+ order by 1</value>
+  </data>
+  <data name="EtiquetaServicesGetTagListHana" xml:space="preserve">
+    <value>select "Code", "Name"
+  from "@CVA_ETIQUETA"
+ where "Canceled" = 'N'
+ order by 2</value>
+  </data>
+  <data name="EtiquetaServicesGetTagListSql" xml:space="preserve">
+    <value>select Code, Name
+  from [@CVA_ETIQUETA]
+ where canceled = 'N'
+ order by 2</value>
+  </data>
+  <data name="EtiquetaServicesGetTagSql" xml:space="preserve">
+    <value>select Code, Name, U_descricao, convert(varchar(8000), U_script) as U_script, U_linguagem, U_procedure, U_local, U_procpesq
+  from [@CVA_ETIQUETA]
+ where canceled = 'N'
+   and code = '{0}'
+ order by 1</value>
+  </data>
+  <data name="EtiquetaValida_GetByItem" xml:space="preserve">
+    <value>SELECT DISTINCT
+	ETIQ."Code",
+	ETIQ."Name"
+FROM "@SO_ETIQ_ITEM" ETIQ_ITEM
+	INNER JOIN "@CVA_ETIQUETA" ETIQ ON ETIQ."Code" = ETIQ_ITEM."U_CodEtiq"
+WHERE ETIQ_ITEM."U_ItemCode" = '{0}' AND ETIQ_ITEM."U_Valida" = 'Y'
+ORDER BY ETIQ."Code"</value>
+  </data>
+  <data name="Etiqueta_GetByOrdemProducao" xml:space="preserve">
+    <value>SELECT DISTINCT
+	OWOR."ItemCode" || ' - ' || OWOR."ProdName" "Item",
+	'Y' "#",
+	ETIQ."Name" "Etiqueta",
+	ETIQ."Code"	"CodEtiq",
+	OWOR."DocEntry"
+FROM OWOR
+	INNER JOIN "@CVA_ETIQUETA" ETIQ ON (ETIQ."Code" = OWOR."U_SO_EtiqPadrao1" OR ETIQ."Code" = OWOR."U_SO_EtiqPadrao2")
+WHERE OWOR."DocNum" = {0}</value>
+  </data>
+  <data name="Etiqueta_GetByPN" xml:space="preserve">
+    <value>SELECT DISTINCT
+	ETIQ."Code",
+	ETIQ."Name"
+FROM "@SO_ETIQ_PN" ETIQ_PN 
+	INNER JOIN "@SO_ETIQ_ITEM" ETIQ_ITEM ON ETIQ_ITEM."U_CodEtiq" = ETIQ_PN."U_CodEtiq" AND ETIQ_ITEM."U_Valida" = 'Y'
+	INNER JOIN "@CVA_ETIQUETA" ETIQ ON ETIQ."Code" = ETIQ_ITEM."U_CodEtiq" AND ETIQ_ITEM."U_ItemCode" = '{1}'
+WHERE ETIQ_PN."U_CardCode" = '{0}' AND ETIQ_PN."U_Padrao" = 'Y'
+ORDER BY ETIQ."Code"</value>
+  </data>
+</root>

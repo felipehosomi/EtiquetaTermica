@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CVA.EtiquetaTermica.Monitor.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="origem" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">c:\Temp\etiquetas\</Value>
+    </Setting>
+    <Setting Name="destino" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">\\CVA-note-17\Zebra1</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
